@@ -1,0 +1,9 @@
+---
+#The amount of money the player should get for welcoming new players
+money: 5000
+
+#The amount of time (in seconds) a player has to welcome new players
+timer: 20
+
+#The amount of time (in seconds) before a player can welcome again. MUST BE GREATER THAN TIMER!
+cooldown: 40

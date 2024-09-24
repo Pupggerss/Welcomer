@@ -1,0 +1,7 @@
+name: Welcomer
+description: Welcome new players on join
+main: pup\welcomer\Main
+version: 1.0.0
+api: 5.0.0
+
+author: Pupggers

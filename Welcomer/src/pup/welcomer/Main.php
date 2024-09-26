@@ -40,7 +40,6 @@
             $this->money = $this->getConfig ()->get ('money');
             $this->timer = $this->getConfig ()->get ('timer');
             $this->cooldownTime = $this->getConfig ()->get ('cooldown');
-            $this->timeRemaining = 0;
             
             if ($this->getServer ()->getPluginManager ()->getPlugin ('BedrockEconomy') !== NULL) {
                 $this->eco = TRUE;
@@ -60,6 +59,7 @@
         {
             $player = $event->getPlayer ();
             if (!$player->hasPlayedBefore ()) {
+                 $this->timeRemaining = 0;
                 $this->startCountdown ();
             }
         }

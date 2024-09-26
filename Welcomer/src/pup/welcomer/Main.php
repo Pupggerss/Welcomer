@@ -40,6 +40,7 @@
             $this->money = $this->getConfig ()->get ('money');
             $this->timer = $this->getConfig ()->get ('timer');
             $this->cooldownTime = $this->getConfig ()->get ('cooldown');
+            $this->timeRemaining = 0;
             
             if ($this->getServer ()->getPluginManager ()->getPlugin ('BedrockEconomy') !== NULL) {
                 $this->eco = TRUE;
@@ -78,7 +79,7 @@
         {
             $player = $event->getPlayer ();
             $playerName = $player->getName ();
-            $message = strtolower (trim ($event->getMessage ()));
+            $message = strtolower (trim ($event->getMessage ())); //no.
             
             if (isset($this->cooldown[$playerName]) && (time () - $this->cooldown[$playerName]) < $this->cooldownTime) {
                 $player->sendMessage (TextFormat::DARK_RED . 'You are on cooldown!');
